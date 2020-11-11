@@ -2,6 +2,7 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 import pandas as pd
+import datetime
 
 def car_age(model_year):
     return datetime.datetime.now().year - model_year
