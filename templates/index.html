@@ -19,13 +19,14 @@
     <form action="{{ url_for('predict')}}"method="post">
     	  <input type="text" name="Car_Age" placeholder="Car Age" required="required" />
         <input type="text" name="condition" placeholder="Condition" required="required" />
-		    <input type="text" name="Travelled_Distance" placeholder="Travelled Distance(km)" required="required" />
+        <input type="text" name="fuel_type" placeholder="Fuel Type" required="required" />
+        <input type="text" name="Travelled_Distance" placeholder="Travelled Distance(km)" required="required" />
         <input type="text" name="Volume" placeholder="Volume in cm^3" required="required" />
         <input type="text" name="color" placeholder="Color" required="required" />
         <input type="text" name="transmission" placeholder="Transmission Type" required="required" />
-        <input type="text" name="test_score" placeholder="Test Score" required="required" />
-        <input type="text" name="test_score" placeholder="Test Score" required="required" />
-        <input type="text" name="test_score" placeholder="Test Score" required="required" />
+        <input type="text" name="drive_unit" placeholder="Drive Unit" required="required" />
+        <input type="text" name="segment" placeholder="Segment" required="required" />
+        
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
