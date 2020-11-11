@@ -29,7 +29,14 @@ dictionaries = [{'for parts': 0, 'with damage': 1, 'with mileage': 2},
                 'rear drive': 3},
                 {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'J': 6, 'M': 7, 'S': 8}]
 
+def car_age(model_year):
+    return datetime.datetime.now().year - model_year
 
+def distance_normalize(distance):
+    return (distance)*10/9999999.0
+
+def volume_normalize(volume):
+    return (volume-500.0)*10/(20000.0 - 500.0)
 
 @app.route('/')
 def home():
@@ -44,11 +51,11 @@ def predict():
     
     
     dictionary = {
-                    'year':[features[0]],
+                    'year':[car_age(features[0])],
                     'condition':[features[1]],
-                    'mileage(kilometers)':[features[2]],
+                    'mileage(kilometers)':[distance_normalize(features[2])],
                     'fuel_type':[features[3]],
-                    'volume(cm3)':[features[4]],
+                    'volume(cm3)':[volume_normalize(features[4])],
                     'color':[features[5]],
                     'transmission':[features[6]],
                     'drive_unit':[features[7]],
