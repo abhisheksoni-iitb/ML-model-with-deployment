@@ -3,6 +3,15 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 import pandas as pd
 
+def car_age(model_year):
+    return datetime.datetime.now().year - model_year
+
+def distance_normalize(distance):
+    return (distance)*10/9999999.0
+
+def volume_normalize(volume):
+    return (volume-500.0)*10/(20000.0 - 500.0)
+
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
@@ -29,14 +38,7 @@ dictionaries = [{'for parts': 0, 'with damage': 1, 'with mileage': 2},
                 'rear drive': 3},
                 {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'J': 6, 'M': 7, 'S': 8}]
 
-def car_age(model_year):
-    return datetime.datetime.now().year - model_year
 
-def distance_normalize(distance):
-    return (distance)*10/9999999.0
-
-def volume_normalize(volume):
-    return (volume-500.0)*10/(20000.0 - 500.0)
 
 @app.route('/')
 def home():
