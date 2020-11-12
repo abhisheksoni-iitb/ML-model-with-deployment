@@ -5,7 +5,8 @@ import pandas as pd
 import datetime
 
 def car_age(model_year):
-    return datetime.datetime.now().year - model_year
+    age_of_car = datetime.datetime.now().year - model_year
+    return (10*(age_of_car-1)/(62))
 
 def distance_normalize(distance):
     return (distance)*10/9999999.0
@@ -54,11 +55,11 @@ def predict():
     
     
     dictionary = {
-                    'year':[features[0]],
+                    'year':[car_age(features[0])],
                     'condition':[features[1]],
-                    'mileage(kilometers)':[features[2]],
+                    'mileage(kilometers)':[distance_normalize(features[2])],
                     'fuel_type':[features[3]],
-                    'volume(cm3)':[features[4]],
+                    'volume(cm3)':[volume_normalize(features[4])],
                     'color':[features[5]],
                     'transmission':[features[6]],
                     'drive_unit':[features[7]],
