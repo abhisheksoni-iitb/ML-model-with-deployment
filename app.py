@@ -54,11 +54,11 @@ def predict():
     
     
     dictionary = {
-                    'year':[car_age(features[0])],
+                    'year':[features[0]],
                     'condition':[features[1]],
-                    'mileage(kilometers)':[distance_normalize(features[2])],
+                    'mileage(kilometers)':[features[2]],
                     'fuel_type':[features[3]],
-                    'volume(cm3)':[volume_normalize(features[4])],
+                    'volume(cm3)':[features[4]],
                     'color':[features[5]],
                     'transmission':[features[6]],
                     'drive_unit':[features[7]],
@@ -68,7 +68,7 @@ def predict():
     
     prediction = model.predict(final_features)
 
-    output = round(prediction[0], 3)
+    output = round(prediction[0], 2)
 
     return render_template('index.html', prediction_text='Estimated price should $ {}'.format(output))
 
