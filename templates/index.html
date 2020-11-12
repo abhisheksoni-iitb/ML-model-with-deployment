@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bank Customer Feedback Form</title>
+    <title>Car Price Prediction App</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
@@ -161,7 +161,7 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
+      <form action="{{ url_for('predict')}}"method="post">
         <h1>Car Price Prediction</h1>
         <br>
         <h4>Car Model Year<span>*</span></h4>
@@ -225,12 +225,12 @@
         <p class="small">Please Specify any other details regarding car.</small>
           <textarea rows="5"></textarea>
         <div class="btn-block">
-          <button type="submit" href="/">Predict Car Price</button>
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict Car Price</button>
         </div>
         <br>
-        {{ prediction_text }}
+        <h1>{{ prediction_text }}</h1>
       </form>
-   
+      <div class="testbox"></div>
     </div>
   </body>
 </html>
