@@ -225,12 +225,18 @@
         <p class="small">Please Specify any other details regarding car.</small>
           <textarea rows="5"></textarea>
         <div class="btn-block">
-          <button type="submit" class="btn btn-primary btn-block btn-large">Predict Car Price</button>
+          <button type="submit" onclick="printPopUp()";" class="btn btn-primary btn-block btn-large">Predict Car Price</button>
         </div>
         <br>
-        <h1>{{ prediction_text }}</h1>
+        <!-- <h1>{{ prediction_text }}</h1> -->
       </form>
       <div class="testbox"></div>
     </div>
+    <script> 
+			function printPopUp() { 
+				alert({{ prediction_text }}) 
+				// window.print(); 
+			} 
+		</script> 
   </body>
 </html>
