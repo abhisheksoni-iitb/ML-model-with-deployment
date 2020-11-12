@@ -40,10 +40,10 @@
       padding: 3px;
       }
       form {
-      width: 100%;
+      width: 30%;
       padding: 20px;
       background: #fff;
-      box-shadow: 0 2px 5px #ccc; 
+      box-shadow: 0 15px 50px #ccc; 
       }
       input {
       width: calc(100% - 10px);
@@ -163,7 +163,6 @@
     <div class="testbox">
       <form action="{{ url_for('predict')}}"method="post">
         <h1>Car Price Prediction</h1>
-        <br>
         <h4>Car Model Year<span>*</span></h4>
         <input type="text" name="model_year" />
         <h4>Car Condition<span>*</span></h4>
@@ -221,22 +220,13 @@
             <option value=7>M</option>
             <option value=8>S</option>
         </select>
-        <h4>Any Other Detail</h4>
-        <p class="small">Please Specify any other details regarding car.</small>
-          <textarea rows="5"></textarea>
         <div class="btn-block">
-          <button type="submit" onclick="printPopUp()";" class="btn btn-primary btn-block btn-large">Predict Car Price</button>
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict Car Price</button>
         </div>
         <br>
-        <!-- <h1>{{ prediction_text }}</h1> -->
+        <h2>{{ prediction_text }}</h2>
       </form>
       <div class="testbox"></div>
     </div>
-    <script> 
-			function printPopUp() { 
-				alert({{ prediction_text }}) 
-				// window.print(); 
-			} 
-		</script> 
   </body>
 </html>
