@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Car Price Predicions</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="car_model_year" placeholder="Car Model Year" required="required" />
+        <br>
+        <br>
+        <label for="condition">Car Condition:</label>
+
+        <select id="condition" name="condition">
+          <option value=0>For Parts</option>
+          <option value=1>With Damage</option>
+          <option value=2>With Mileage</option>
+        </select>
+        
+        <br>
+        <br>
+        <input type="text" name="Travelled_Distance" placeholder="Travelled Distance(km)" required="required" />
+        <br>
+        <br>
+        <label for="cars">Fuel Type:</label>
+  
+        <select id="fuel_type" name="fuel_type">
+          <option value=0>Diesel</option>
+          <option value=1>Petrol</option>
+        </select>
+        
+        <br>
+        <br>
+        <input type="text" name="Volume" placeholder="Volume in cm^3" required="required" />
+        <br>
+        <br>
+        <label for="color">Choose a color:</label>
+    
+        <select id="color" name="color">
+          <option value=0>Black</option>
+          <option value=1>Blue</option>
+          <option value=2>Brown</option>
+          <option value=3>Burgundy</option>
+          <option value=4>Gray</option>
+          <option value=5>Green</option>
+          <option value=6>Orange</option>
+          <option value=8>Purple</option>
+          <option value=9>Red</option>
+          <option value=10>Silver</option>
+          <option value=11>White</option>
+          <option value=12>Yellow</option>
+          <option value=7>Other</option>
+        </select>
+          
+        <br>
+        <br>        
+        <label for="drive_unit">Drive Unit:</label>
+  
+        <select id="drive_unit" name="drive_unit">
+          <option value=0>All Wheel Drive</option>
+          <option value=1>Front Wheel Drive</option>
+          <option value=2>Part Time Four wheel Drive</option>
+          <option value=3>Rear Drive</option>
+        </select>
+        
+        <br>
+        <br>        
+        <label for="transmission">Transmission Type:</label>
+  
+        <select id="transmission" name="transmission">
+          <option value=0>Auto</option>
+          <option value=1>Mechanics</option>
+        </select>
+        
+        <br>
+        <br>        
+        <label for="Segment">Choose a Segment:</label>
+  
+        <select id="Segment" name="Segment">
+          <option value=0>A</option>
+          <option value=1>B</option>
+          <option value=2>C</option>
+          <option value=3>D</option>
+          <option value=4>E</option>
+          <option value=5>F</option>
+          <option value=6>J</option>
+          <option value=7>M</option>
+          <option value=8>S</option>
+        </select>
+        
+        <br>
+        <br>        
+        <br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
