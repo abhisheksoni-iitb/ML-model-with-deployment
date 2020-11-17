@@ -51,5 +51,5 @@ The dataset contains the factors which influence the
 
 based on various factors.
 
-1. The **Model python script** can be found here:  **[ Model](Propulsion-Plants-Decay-Evaluation\model.py)**
-2. The **data exploration** jupyter notebook can be found here **[Notebook](Propulsion-Plants-Decay-Evaluation\propulsion-data-exploration.ipynb)**
+1. The **Model python script** can be found here:  **[ Model](Propulsion-Plants-Decay-Evaluation/model.py)**
+2. The **data exploration** jupyter notebook can be found here **[Notebook](Propulsion-Plants-Decay-Evaluation/propulsion-data-exploration.ipynb)**
